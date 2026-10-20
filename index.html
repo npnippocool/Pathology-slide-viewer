@@ -4,37 +4,52 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Digital Pathology Slide</title>
+<title>Interactive Digital Slide Viewer</title>
+
 <style>
+  * {
+    box-sizing: border-box;
+  }
+
   html, body {
     margin: 0;
+    padding: 0;
     width: 100%;
     height: 100%;
+    overflow: hidden;
+    background: #111;
   }
-  .viewer {
-    position: relative;
+
+  /* Visible window containing the slide viewer */
+  .viewer-window {
+    position: fixed;
+    inset: 0;
     width: 100%;
     height: 100vh;
     overflow: hidden;
     background: #111;
   }
-  iframe {
+
+  /* Shift the MGH webpage upwards to hide its header */
+  .mgh-page {
     position: absolute;
-    top: -150px;
-    left: 0;
-    width: 100%;
-    height: calc(100% + 150px);
+    top: -125px;
+    left: -440px;
+    width: calc(100% + 440px);
+    height: calc(100% + 125px);
     border: 0;
   }
 </style>
 </head>
+
 <body>
-<div class="viewer">
-  <iframe
-    src="https://learn.mghpathology.org/index.php/DZI19-55-Case-1#DZI19-55-Case-1_1.tiff"
-    title="Interactive digital slide"
-    allowfullscreen>
-  </iframe>
-</div>
+  <div class="viewer-window">
+    <iframe
+      class="mgh-page"
+      src="https://learn.mghpathology.org/index.php/DZI19-55-Case-1#DZI19-55-Case-1_1.tiff"
+      title="Interactive pathology slide"
+      allowfullscreen>
+    </iframe>
+  </div>
 </body>
 </html>
