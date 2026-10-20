@@ -1,0 +1,40 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Digital Pathology Slide</title>
+<style>
+  html, body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .viewer {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background: #111;
+  }
+  iframe {
+    position: absolute;
+    top: -150px;
+    left: 0;
+    width: 100%;
+    height: calc(100% + 150px);
+    border: 0;
+  }
+</style>
+</head>
+<body>
+<div class="viewer">
+  <iframe
+    src="https://learn.mghpathology.org/index.php/DZI19-55-Case-1#DZI19-55-Case-1_1.tiff"
+    title="Interactive digital slide"
+    allowfullscreen>
+  </iframe>
+</div>
+</body>
+</html>
